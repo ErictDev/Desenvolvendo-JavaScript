@@ -78,14 +78,55 @@
 
 // EVENTO DE FORMULARIO (submit)
 
-const form = document.querySelector("form") //pegando direto pela tag form
+// const form = document.querySelector("form") //pegando direto pela tag form
 
-form.addEventListener("submit", (e) => {
+// form.addEventListener("submit", (e) => {
 
     //Impede o comportamento padrão do formulario
-    e.preventDefault()
+//     e.preventDefault()
 
-    const nome = document.getElementById("nome").value 
+//     const nome = document.getElementById("nome").value 
 
-    console.log(`Nome: ${nome}`)
+//     console.log(`Nome: ${nome}`)
+// })
+
+//Criando elementos na pagina
+// const novoElemento = document.createElement("p") //cria um elemento 1px
+// novoElemento.innerText("Elemento novo criado.") //cria um texto no elemento
+
+// const form = document.getElementById("form")
+
+//estamos adicionando um elemento filho(a),  dentre do pai form
+// form.appendChild(novoElemento)
+
+//criar um botao
+// const botao = document.createElement("button")
+// botao.innerText = "Excluir elemento"
+
+// form.appendChild(botao)
+
+// botao.addEventListener("click", (e) => {
+//     e.preventDefault()
+
+//     novoElemento.remove()
+
+//     form.removeChild(novoElemento)
+// })
+
+// Adicionando elementos em uma lista a partir de um input 
+const input = document.getElementById("input");
+const botao = document.getElementById("add");
+const lista = document.getElementById("lista");
+
+botao.addEventListener("click", () => {
+
+    const valorDigitado =input.value //pega o valor que foi digitado na caixinha
+
+    const li = document.createElement("li"); //criando<li>
+    li.innerText = valorDigitado;
+
+    //colocando o filho (li) dentro do pai 
+    lista.appendChild(li)
+
+    input.value = "";
 })
